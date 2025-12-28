@@ -1,5 +1,7 @@
 $nav-link-color: #060b35;
 $color-blue: #00acdc;
+$background-color: #fff;
+$hover-color: #34568b;
 $font-family: Roboto, sans-serif;
 $header-height: 60px;
 $card-width: 200px;
@@ -37,7 +39,6 @@ h1 {
     width: 40px;
     height: 40px;
     display: flex;
-    align-items: center;
   }
 }
 
@@ -46,8 +47,6 @@ h1 {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    margin-top: 22px;
-    margin-bottom: 50px;
     color: $nav-link-color;
     font-size: 12px;
     font-weight: 500;
@@ -56,7 +55,7 @@ h1 {
     text-decoration: none;
     transition: color 0.3s;
     &:hover {
-      color: #00acdc;
+      color: $color-blue;
     }
     &.is-active {
       position: relative;
@@ -78,7 +77,7 @@ h1 {
   &__list {
     list-style: none;
     display: flex;
-    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
@@ -86,8 +85,7 @@ h1 {
 
   &__item {
     margin-right: 20px;
-    margin-top: 22px;
-    &__item:last-child {
+    &:last-child {
       margin-right: 0;
     }
   }
@@ -122,18 +120,8 @@ h1 {
   border: 1px solid #f3f3f3;
   padding-block: 32px 16px;
   padding-inline: 16px;
-  background: #fff;
-  transition: all 0.3s;
-  &:hover {
-    transform: scale(1.2);
-  }
-
-  &__image {
-    display: flex;
-    width: 160px;
-    height: 134px;
-    margin-bottom: 40px;
-  }
+  background-color: $background-color;
+  transition: transform 0.3s;
 
   &__content {
     margin-bottom: 4px;
@@ -141,9 +129,19 @@ h1 {
     font-size: 12px;
     line-height: 18px;
     color: #060b35;
-    &:hover {
-      color: #34568b;
+    transition: color 0.3s;
+  }
+  .card:hover {
+    transform: scale(1.2);
+    .card__content {
+      color: $hover-color;
     }
+  }
+
+  &__image {
+    width: 160px;
+    height: 134px;
+    margin-bottom: 40px;
   }
 
   &__code {
@@ -178,8 +176,23 @@ h1 {
     color: #060b35;
   }
 
+  &__reviews {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    font-family: $font-family;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #060b35;
+  }
+
   &__button {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     padding: 12px 70px 12px 69px;
     background-color: #00acdc;
@@ -189,7 +202,7 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    color: #fff;
+    color: $background-color;
     width: 166px;
     height: 40px;
     font-family: $font-family;
@@ -198,21 +211,9 @@ h1 {
     line-height: 16px;
     transition: all 0.3s;
     &:hover {
-      background-color: #fff;
-      color: #00acdc;
+      background-color: $background-color;
+      color: $color-blue;
     }
-  }
-
-  &__reviews {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-    font-family: $font-family;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 14px;
-    color: #060b35;
   }
 }
 
